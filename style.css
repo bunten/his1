@@ -1,0 +1,291 @@
+
+/* ページ全体 */
+body {
+    font-family: "Yu Gothic", "Meiryo", sans-serif;
+    margin: 30px;
+    background-color: #f5f7fa;
+    color: #222;
+}
+
+header {
+    margin-bottom: 25px;
+}
+
+h1 {
+    color: #17365d;
+}
+
+h2 {
+    margin-top: 25px;
+    color: #17365d;
+}
+
+/* 入力エリア */
+.input-area {
+    box-sizing: border-box;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 650px;
+}
+
+.input-area h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+
+input {
+    box-sizing: border-box;
+    padding: 9px;
+    width: 300px;
+    max-width: 100%;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 18px;
+    margin-top: 15px;
+    margin-right: 8px;
+    background-color: #2563a6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.secondary {
+    background-color: #666;
+}
+
+#message {
+    color: #b42318;
+    font-weight: bold;
+}
+
+.era-preview {
+    margin-top: 12px;
+    color: #444;
+}
+
+#eraPreview {
+    color: #176b45;
+}
+
+/* 年表とトピックを左右に並べる */
+.timeline-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 20px;
+    align-items: start;
+    margin-top: 25px;
+}
+
+/* 左側の年表 */
+.timeline-panel {
+    min-width: 0;
+}
+
+.timeline-panel h2 {
+    margin-top: 0;
+}
+
+.timeline-scroll {
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+/* 年表本体 */
+.timeline {
+    width: 3000px;
+    position: relative;
+}
+
+/* 時代名の帯 */
+.era-row {
+    display: flex;
+    height: 75px;
+    margin-bottom: 5px;
+}
+
+.era {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid white;
+    padding: 3px;
+    font-size: 13px;
+    overflow: hidden;
+}
+
+.era strong {
+    font-size: 14px;
+}
+
+.era span {
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* 出来事を配置する場所 */
+.event-area {
+    height: 360px;
+    position: relative;
+    border-top: 2px solid #555;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 年表の中央線 */
+.event-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 3px;
+    background-color: #555;
+}
+
+/* 出来事のカード */
+.event {
+    position: absolute;
+    width: 145px;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.event.top {
+    top: 10px;
+}
+
+.event.bottom {
+    bottom: 10px;
+}
+
+.event-card {
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #334155;
+    border-radius: 5px;
+    padding: 8px 5px;
+    overflow-wrap: anywhere;
+    box-shadow: 0 1px 3px #ddd;
+}
+
+.event-card strong {
+    display: block;
+    font-size: 14px;
+}
+
+.event-card span {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+/* 出来事の時代名 */
+.event-card .event-era {
+    color: #176b45;
+    font-weight: bold;
+}
+
+/* 中央線とカードをつなぐ線 */
+.event-stem {
+    width: 2px;
+    height: 28px;
+    background-color: #555;
+    margin: auto;
+}
+
+/* 出来事の位置を示す点 */
+.event-dot {
+    position: absolute;
+    top: calc(50% - 7px);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+/* 右側の歴史トピック一覧 */
+.topics-panel {
+    box-sizing: border-box;
+    min-width: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.topics-panel h2 {
+    margin-top: 0;
+}
+
+.topics-panel > p {
+    font-size: 13px;
+    color: #555;
+}
+
+/* 一覧の各トピック */
+.topic-row {
+    box-sizing: border-box;
+    display: block;
+    background-color: #f5f7fa;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-left: 4px solid #2563a6;
+    border-radius: 4px;
+}
+
+.topic-info {
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* 一覧に表示する時代名 */
+.topic-era {
+    color: #176b45;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* 削除ボタン */
+.topics-panel .delete-button {
+    background-color: #b42318;
+    margin-top: 8px;
+    margin-right: 0;
+}
+
+/* 画面が狭いときは上下に並べる */
+@media (max-width: 1000px) {
+    body {
+        margin: 15px;
+    }
+
+    .timeline-workspace {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

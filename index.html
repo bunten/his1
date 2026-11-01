@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>自分で作る日本史年表</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>自分で作る日本史年表</h1>
+        <p>歴史上の出来事を登録して、時代の流れを学習しましょう。</p>
+    </header>
+
+    <!-- 歴史トピックの入力 -->
+    <section class="input-area">
+        <h2>歴史トピックを入力する</h2>
+
+        <label for="topic">出来事の名前</label>
+        <input
+            id="topic"
+            type="text"
+            placeholder="例：大化の改新"
+        >
+
+        <label for="year">発生年</label>
+        <input
+            id="year"
+            type="number"
+            min="1"
+            max="2026"
+            placeholder="例：645"
+        >
+
+        <p class="era-preview">
+            判定された時代：
+            <strong id="eraPreview">年号を入力してください</strong>
+        </p>
+
+        <button id="addButton">年表に追加</button>
+
+        <button id="resetButton" class="secondary">
+            初期データに戻す
+        </button>
+
+        <p id="message" aria-live="polite"></p>
+    </section>
+
+    <!-- 年表と歴史トピックを左右に配置 -->
+    <main class="timeline-workspace">
+
+        <!-- 左側：年表 -->
+        <section class="timeline-panel">
+            <h2>日本史の年表</h2>
+            <p>年表は左右にスクロールできます。</p>
+
+            <div class="timeline-scroll">
+                <div id="timeline" class="timeline"></div>
+            </div>
+        </section>
+
+        <!-- 右側：歴史トピック -->
+        <section class="topics-panel">
+            <h2>歴史トピック</h2>
+            <p>発生年・時代名・出来事を表示します。</p>
+
+            <div id="topicList"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
